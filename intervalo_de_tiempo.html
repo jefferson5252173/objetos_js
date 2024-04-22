@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador</title>
+</head>
+<body>
+    <h1>Temporizador</h1>
+    <p>Segundos transcurridos: <span id="temporizador">0</span></p>
+
+    <script>
+        // Variable para almacenar el tiempo transcurrido
+        let segundos = 0;
+
+        // Función para actualizar el temporizador
+        function actualizarTemporizador() {
+            segundos++;
+            document.getElementById('temporizador').textContent = segundos;
+        }
+
+        // Establecer el intervalo para actualizar el temporizador cada segundo
+        const intervalID = setInterval(actualizarTemporizador, 1000);
+
+        // Ejemplo de cómo detener el temporizador después de 10 segundos
+        setTimeout(() => {
+            clearInterval(intervalID);
+            alert('Temporizador detenido después de 10 segundos.');
+        }, 10000);
+    </script>
+</body>
+</html>
